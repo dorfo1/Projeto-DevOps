@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -31,8 +32,11 @@ public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.ServicoH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ServicoHolder servicoHolder, int position) {
-
+    public void onBindViewHolder(@NonNull ServicoHolder holder, int position) {
+        Servico servico = servicos.get(position);
+        holder.tv_servico.setText(servico.getNome());
+        holder.tv_categoria.setText(servico.getCategoria());
+        holder.tv_valor.setText("R$ " +String.valueOf(servico.getValor()));
     }
 
 
@@ -44,9 +48,12 @@ public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.ServicoH
 
 
     public class ServicoHolder extends RecyclerView.ViewHolder {
-
+        private TextView tv_servico,tv_categoria,tv_valor;
         public ServicoHolder(@NonNull View itemView) {
             super(itemView);
+            tv_servico = itemView.findViewById(R.id.servico_item_row_descricao);
+            tv_categoria = itemView.findViewById(R.id.servico_item_row_categoria);
+            tv_valor = itemView.findViewById(R.id.servico_item_row_valor);
         }
     }
 }

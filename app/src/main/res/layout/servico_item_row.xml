@@ -8,7 +8,7 @@
         android:id="@+id/servico_item_row"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         app:cardElevation="8dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,7 +30,7 @@
                 android:layout_margin="8dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/servico_item_row_prestador"/>
+                app:layout_constraintBottom_toTopOf="@id/servico_item_row_categoria"/>
 
             <TextView
                 android:id="@+id/servico_item_row_valor"
@@ -45,7 +45,7 @@
                 />
 
             <TextView
-                android:id="@+id/servico_item_row_prestador"
+                android:id="@+id/servico_item_row_categoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
